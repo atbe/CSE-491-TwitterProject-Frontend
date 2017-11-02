@@ -1,16 +1,24 @@
 import { NgModule } from '@angular/core';
 import { TweetComponent } from './tweet/tweet.component';
 import { CommonModule } from '@angular/common';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { MatButtonModule, MatCardModule, MatIconModule, MatMenuModule, MatToolbarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
-    TweetComponent
+    TweetComponent,
+    ToolbarComponent
   ],
   exports: [
-    TweetComponent
+    TweetComponent,
+    ToolbarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule
   ],
   providers: [],
 })
