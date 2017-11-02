@@ -1,6 +1,6 @@
 @color_1: black;
 @color_2: #55acee;
-@color_3: #999;
+@color_3: #151515;
 @color_4: #DD2E44;
 @color_5: #4A913C;
 @font_family_1: Sans-Serif;
@@ -68,16 +68,22 @@ body {
 .tweet--user-name {
   font-weight: bold;
   padding-top: 9px;
+  color: @color_3;
   span {
     font-weight: normal;
     color: @color_3;
     font-size: 0.8em;
     display: block;
   }
+  a {
+    text-decoration: none;
+    color: #000;
+  }
 }
 .tweet--body {
   margin: 20px 0 5px;
   font-size: 1.5em;
+  color: @color_3;
 }
 .tweet--time {
   font-weight: normal;
