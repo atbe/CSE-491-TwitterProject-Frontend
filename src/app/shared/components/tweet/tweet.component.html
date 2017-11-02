@@ -1,3 +1,20 @@
-<h5>
-  {{ tweet.text }}
-</h5>
+<div class="tweet">
+  <a href="#" class="follow"><i class="fa fa-twitter"></i>Follow</a>
+
+  <div class="tweet--user">
+    <img class="tweet--user-avatar" [src]="tweet.user.profile_image_url_https" alt="" />
+    <div class="tweet--user-name">{{ tweet.user.name }}<span>@{{tweet.user.screen_name}}</span></div>
+  </div>
+
+  <p class="tweet--body">{{ tweet.text }}</p>
+
+  <div class="tweet--time">{{ tweet.timestamp_ms | date:'yyyy-MM-dd HH:mm:ss Z' }}</div>
+
+  <div class="tweet--actions">
+    <i class="fa fa-ellipsis-h"></i>
+    <i class="fa fa-heart"></i>
+    <i class="fa fa-retweet"></i>
+    <i class="fa fa-reply"></i>
+    <span>{{ tweet.retweet_count }} retweets</span>
+  </div>
+</div>

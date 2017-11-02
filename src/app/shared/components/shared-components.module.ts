@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { TweetComponent } from './tweet/tweet.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -8,7 +9,9 @@ import { TweetComponent } from './tweet/tweet.component';
   exports: [
     TweetComponent
   ],
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   providers: [],
 })
 export class SharedComponentsModule { }

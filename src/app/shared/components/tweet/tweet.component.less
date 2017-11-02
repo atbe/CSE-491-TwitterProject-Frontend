@@ -1,0 +1,115 @@
+@color_1: black;
+@color_2: #55acee;
+@color_3: #999;
+@color_4: #DD2E44;
+@color_5: #4A913C;
+@font_family_1: Sans-Serif;
+@background_color_1: #f5f8fa;
+@background_color_2: #e1e8ed;
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: @font_family_1;
+  background: #F5F8FA;
+}
+.tweet {
+  margin: 10vh auto;
+  border: 1px solid #eee;
+  padding: 25px 50px;
+  border-radius: 5px;
+  max-width: 500px;
+  background: white;
+  .follow {
+    display: block;
+    background-color: @background_color_1;
+    background-image: linear-gradient(#fff, #f5f8fa);
+    border: 1px #e1e8ed solid;
+    border-radius: 5px;
+    color: @color_1;
+    padding: 5px;
+    margin-top: 9px;
+    float: right;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+      background-color: @background_color_2;
+      background-image: linear-gradient(#fff, #e1e8ed);
+    }
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    i {
+      color: @color_2;
+      padding-right: 5px;
+    }
+  }
+}
+.tweet--user {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+.tweet--user-avatar {
+  border-radius: 5px;
+  float: left;
+  margin-right: 10px;
+}
+.tweet--user-name {
+  font-weight: bold;
+  padding-top: 9px;
+  span {
+    font-weight: normal;
+    color: @color_3;
+    font-size: 0.8em;
+    display: block;
+  }
+}
+.tweet--body {
+  margin: 20px 0 5px;
+  font-size: 1.5em;
+}
+.tweet--time {
+  font-weight: normal;
+  color: @color_3;
+  font-size: 0.8em;
+}
+.tweet--actions {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  [class*="fa-"] {
+    float: right;
+    margin-left: 20px;
+    color: @color_3;
+    &:hover {
+      color: @color_5;
+      cursor: pointer;
+    }
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+  [class*="fa-"].fa-heart {
+    &:hover {
+      color: @color_4;
+    }
+  }
+  span {
+    color: @color_3;
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+}

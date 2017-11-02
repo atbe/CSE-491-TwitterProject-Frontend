@@ -1,3 +1,5 @@
-<app-tweet *ngFor="let tweet of tweets | async"
-           [tweet]="tweet">
-</app-tweet>
+<div *ngFor="let tweet of tweets | async">
+  <app-tweet [tweet]="tweet">
+  </app-tweet>
+</div>
+
