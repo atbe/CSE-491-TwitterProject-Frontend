@@ -14,4 +14,4 @@ after_success:
 - firebase deploy --token $FIREBASE_TOKEN
 before_install:
 - openssl aes-256-cbc -K $encrypted_946c8013f8fc_key -iv $encrypted_946c8013f8fc_iv
-  -in firebase-config.ts.enc -out firebase-config.ts -d
+  -in ./src/app/firebase-config.ts.enc -out ./src/app/firebase-config.ts -d
