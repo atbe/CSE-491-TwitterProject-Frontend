@@ -1,18 +1,17 @@
 language: node_js
 node_js:
-  - "6.9"
-
+- '6.9'
 branches:
   only:
   - master
   - stable
-
 before_script:
-  - npm install -g firebase-tools
-  - npm install -g @angular/cli
-
+- npm install -g firebase-tools
+- npm install -g @angular/cli
 script:
-  - ng build --prod
-
+- ng build --prod
 after_success:
-  - firebase deploy --token $FIREBASE_TOKEN
+- firebase deploy --token $FIREBASE_TOKEN
+before_install:
+- openssl aes-256-cbc -K $encrypted_946c8013f8fc_key -iv $encrypted_946c8013f8fc_iv
+  -in firebase-config.ts.enc -out firebase-config.ts -d
