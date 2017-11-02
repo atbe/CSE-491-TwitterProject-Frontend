@@ -18,7 +18,8 @@ import { MatButtonModule, MatCardModule, MatIconModule, MatMenuModule, MatToolba
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule
   ],
   providers: [],
 })
