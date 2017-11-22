@@ -17,7 +17,7 @@ export class TweetStatisticsComponent implements OnInit {
     {'name': 'Neutral', 'value': 0}
   ];
 
-  readonly pieChartView: number[] = [600, 300];
+  readonly pieChartView: number[] = [800, 500];
   readonly pieChartColorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
