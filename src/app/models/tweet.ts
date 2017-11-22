@@ -39,8 +39,8 @@ export interface Place {
 
 export interface Tweet {
   created_at?: string;
-  id: number;
-  id_str: string;
+  id?: number;
+  id_str?: string;
   text?: string;
   truncated?: boolean;
   entities?: Entities;

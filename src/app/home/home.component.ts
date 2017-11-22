@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { Tweet } from '../models/tweet';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-home',
@@ -12,11 +12,10 @@ export class HomeComponent implements OnInit {
   tweets: Observable<Tweet[]>;
 
   constructor(db: AngularFirestore) {
-    this.tweets = db
-      .collection('tweets', ref => ref
-        .limit(10)
-        .orderBy('id', 'desc'))
-      .valueChanges();
+    this.tweets = db.collection('tweets', ref => ref
+      .limit(10)
+      .orderBy('id', 'desc')
+    ).valueChanges();
   }
 
   ngOnInit() {
