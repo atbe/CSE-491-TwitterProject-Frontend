@@ -12,10 +12,13 @@ export class HomeComponent implements OnInit {
   tweets: Observable<Tweet[]>;
 
   constructor(db: AngularFirestore) {
-    this.tweets = db.collection('tweets').valueChanges();
+    this.tweets = db
+      .collection('tweets', ref => ref
+        .limit(10)
+        .orderBy('id', 'desc'))
+      .valueChanges();
   }
 
   ngOnInit() {
   }
-
 }
