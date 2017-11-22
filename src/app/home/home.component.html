@@ -1,3 +1,14 @@
-<app-tweet *ngFor="let tweet of tweets | async" [tweet]="tweet">
-</app-tweet>
+<h2>
+  Trump Twitter Reply Analysis
+</h2>
 
+<div *ngFor="let tweet of tweets | async" class="app-tweet">
+  <app-tweet
+    [tweet]="tweet">
+  </app-tweet>
+
+  <app-tweet-statistics
+    [tweetId]="tweet.id_str"
+    class="tweet-statistics">
+  </app-tweet-statistics>
+</div>
