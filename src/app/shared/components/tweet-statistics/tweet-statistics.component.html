@@ -17,6 +17,7 @@
         </ngx-charts-gauge>
       </mat-grid-tile>
       <mat-grid-tile>
+        <h3>Top Hashtags</h3>
         <ol>
             <li *ngFor="let hashtag of hashtags | async">
               {{hashtag.text}} = {{hashtag.count}}
