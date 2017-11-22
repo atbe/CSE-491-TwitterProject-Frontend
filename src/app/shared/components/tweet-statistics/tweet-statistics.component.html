@@ -1,0 +1,27 @@
+<div>
+    <mat-grid-list cols="3" rowHeight="3:1">
+      <mat-grid-tile>
+        <ngx-charts-pie-chart
+          [view]="pieChartView"
+          [scheme]="pieChartColorScheme"
+          [results]="sentimentValues"
+          [labels]="true"
+          [animations]="true">
+        </ngx-charts-pie-chart>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <ngx-charts-gauge
+        [view]="pieChartView"
+        [scheme]="pieChartColorScheme"
+        [results]="sentimentValues">
+        </ngx-charts-gauge>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <ol>
+            <li *ngFor="let hashtag of hashtags | async">
+              {{hashtag.text}} = {{hashtag.count}}
+            </li>
+        </ol>
+      </mat-grid-tile>
+    </mat-grid-list>
+</div>

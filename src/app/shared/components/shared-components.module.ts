@@ -2,16 +2,23 @@ import { NgModule } from '@angular/core';
 import { TweetComponent } from './tweet/tweet.component';
 import { CommonModule } from '@angular/common';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { MatButtonModule, MatCardModule, MatIconModule, MatMenuModule, MatToolbarModule } from '@angular/material';
+import {
+  MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatListModule, MatMenuModule,
+  MatToolbarModule
+} from '@angular/material';
+import { TweetStatisticsComponent } from './tweet-statistics/tweet-statistics.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
     TweetComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    TweetStatisticsComponent
   ],
   exports: [
     TweetComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    TweetStatisticsComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +26,9 @@ import { MatButtonModule, MatCardModule, MatIconModule, MatMenuModule, MatToolba
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    NgxChartsModule,
+    MatExpansionModule
   ],
   providers: [],
 })

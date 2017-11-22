@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Tweet } from '../../../models/tweet';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-tweet',
@@ -9,7 +10,8 @@ import { Tweet } from '../../../models/tweet';
 export class TweetComponent implements OnInit {
   @Input() tweet: Tweet;
 
-  constructor() { }
+  constructor(public db: AngularFirestore) {
+  }
 
   ngOnInit() {
   }
