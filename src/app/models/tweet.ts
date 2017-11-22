@@ -56,10 +56,12 @@ export interface Tweet {
   place?: Place;
   contributors?: any;
   is_quote_status?: boolean;
+  reply_count?: number;
   retweet_count?: number;
   favorite_count?: number;
   favorited?: boolean;
   retweeted?: boolean;
   lang?: string;
+  timestamp_ms?: number;
 }
 
