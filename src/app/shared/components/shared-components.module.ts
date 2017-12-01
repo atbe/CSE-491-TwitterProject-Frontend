@@ -11,6 +11,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { RouterModule } from '@angular/router';
 import { TopHashtagsComponent } from './top-hashtags/top-hashtags.component';
 import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ResponsiveModule } from 'ng2-responsive';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgxChartsModule,
     MatExpansionModule,
     NgbModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    ResponsiveModule
   ],
   providers: [],
 })
