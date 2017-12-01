@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Tweet } from '../models/tweet';
+import { Tweet } from '../../models/tweet';
 import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
