@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
       .limit(10)
       .orderBy('id', 'desc')
     ).valueChanges();
+
     this.tweets.subscribe(() => this.isLoading = false);
   }
 
