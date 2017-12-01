@@ -13,6 +13,7 @@ import { CONFIG } from './firebase-config';
 import { SharedComponentsModule } from './shared/components/shared-components.module';
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
     AngularFirestoreModule,
     SharedComponentsModule,
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

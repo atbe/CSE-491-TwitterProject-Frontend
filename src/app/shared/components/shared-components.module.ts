@@ -9,6 +9,7 @@ import {
 import { TweetStatisticsComponent } from './tweet-statistics/tweet-statistics.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TopHashtagsComponent } from './top-hashtags/top-hashtags.component';
+import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { TopHashtagsComponent } from './top-hashtags/top-hashtags.component';
     MatMenuModule,
     MatCardModule,
     NgxChartsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    NgbModule,
+    NgbCollapseModule
   ],
   providers: [],
 })

@@ -1,6 +1,13 @@
-<h1>Top 10 Hashtags</h1>
-<ul class="chart">
-  <li *ngFor="let hashtag of hashtags | async">
+<p class="center">
+  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="topHashtags">
+    <i class="fa fa-plus"></i> Top 10 Hashtags
+  </button>
+</p>
+<div id="topHashtags" [ngbCollapse]="isCollapsed">
+  <ul class="chart">
+    <li *ngFor="let hashtag of hashtags | async">
       {{hashtag.count}} replies with this hashtag <strong>#{{hashtag.text}}</strong>
-  </li>
-</ul>
+    </li>
+  </ul>
+</div>

@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class TopHashtagsComponent implements OnInit {
   @Input() hashtags: Observable<any>;
+  public isCollapsed = true;
 
   constructor() { }
 
