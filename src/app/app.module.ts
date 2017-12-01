@@ -13,8 +13,6 @@ import { CONFIG } from './firebase-config';
 import { SharedComponentsModule } from './shared/components/shared-components.module';
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
-<<<<<<< HEAD
-import { AboutComponent } from './pages/about/about.component';
 import { PagesModule } from './pages/pages.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
