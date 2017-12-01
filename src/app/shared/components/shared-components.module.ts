@@ -8,6 +8,7 @@ import {
 } from '@angular/material';
 import { TweetStatisticsComponent } from './tweet-statistics/tweet-statistics.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     TweetStatisticsComponent
   ],
   imports: [
+    RouterModule,
     CommonModule,
     MatToolbarModule,
     MatIconModule,
