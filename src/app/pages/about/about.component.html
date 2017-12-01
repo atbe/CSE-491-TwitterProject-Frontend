@@ -1,3 +1,137 @@
-<p>
-  about works!
-</p>
+<h4 class="display-4 top-header">
+Purpose
+</h4>
+
+<blockquote class="about-body blockquote">
+  <p>
+    On November 8th, 2016, Donald Trump was elected to be the 45th President
+    of the United States of America. Since then, President Trump has tweeted over
+    <strong>~2,500</strong> times using his
+    <a href="https://twitter.com/realDonaldTrump" target="_blank">@realDonaldTrump</a>
+    Twitter account.
+
+    <br><br>
+
+    We sought out to answer a simple question:<br>
+    <i>"How do the people feel about President Trumps tweets?"</i>
+
+    <br><br>
+
+    In order to answer this question, we needed <b>data</b>, lots of it.
+    What better place to turn then Twitter where President Trump makes public
+    statements dozens of times per day?
+
+    <br><br>
+
+    This project was created for the
+    <a href="http://cse.msu.edu/~mayao4/cse482/index.html" target="_blank">
+      CSE 482
+    </a>
+    course at Michigan State University.
+  </p>
+</blockquote>
+
+<hr>
+
+<h4 class="display-4">What we do</h4>
+
+<blockquote class="about-body blockquote">
+  <p>
+    <i>Every time President Trump posts a tweet, our program does the following:</i>
+  </p>
+  <br>
+  <div class="steps-list">
+    <ol>
+      <li>Store the Tweet in our database.</li>
+      <li>Track the replies of the tweet.</li>
+      <li>
+        Analyze the
+        <a href="https://www.google.com/search?safe=off&q=Dictionary#dobs=sentiment" target="_blank">sentiment</a>
+        of each individual reply. Sentiment can be <span class="positive">positive</span>,
+        <span class="negative">negative</span>, or <span class="neutral">neutral</span>.
+      </li>
+      <li>Count the frequency of each hashtags used in each reply.</li>
+      <li>Visualize the data collected on this website.</li>
+    </ol>
+  </div>
+</blockquote>
+
+<hr>
+
+<h4 class="display-4">The Team</h4>
+
+<div class="person">
+  <figure>
+    <img src="./assets/images/abe.png" alt="Photo of Ibrahim Ahmed">
+    <figcaption>Ibrahim Ahmed</figcaption>
+  </figure>
+  <span>
+    <a href="https://github.com/atbe" target="_blank">
+      <i class="fa fa-github-square"></i>
+    </a>
+  </span>
+  <span>
+    <a href="https://twitter.com/tht_roony" target="_blank">
+      <i class="fa fa-twitter-square"></i>
+    </a>
+  </span>
+  <span>
+    <a href="https://www.linkedin.com/in/ibrahimabdulahmed/" target="_blank">
+      <i class="fa fa-linkedin-square"></i>
+    </a>
+  </span>
+  <span>
+    <a href="https://atbe.me/about" target="_blank">
+      <i class="fa fa-globe"></i>
+    </a>
+  </span>
+</div>
+
+<hr>
+
+<h4 class="display-4">Technologies we used</h4>
+
+<div class="technologies">
+  <ul>
+    <li>
+      <a href="https://angular.io/" target="_blank"><span>Angular</span></a>
+      <p>
+        This <b>website</b> that you're using to view our analysis is built from the ground
+        up using the Angular web framework.
+      </p>
+    </li>
+    <li>
+      <a href="https://firebase.google.com/" target="_blank"><span>Google Firebase</span></a>
+      <p>
+        The website you're viewing right now was sent to you from Firebases' <b>hosting</b> servers! <br><br *isMobile>
+        The <b>data</b> you see on the homepage is all saved on Firebase as well. <br><br *isMobile>
+        By utilizing <b>Firebase Functions</b> we were able to handle the processing of the replies
+        with a completely <i>serverless architecture.</i>
+      </p>
+    </li>
+    <li>
+      <a href="https://github.com/thisandagain/sentiment" target="_blank"><span>Node Sentiment Library</span></a>
+      <p>
+        We used the
+        <i><a href="http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010" target="_blank">AFINN-based</a></i>
+        sentiment analysis library for Node.js to analyze the text in the replies.
+      </p>
+    </li>
+    <li>
+      <a href="https://travis-ci.com/" target="_blank"><span>Travis CI</span></a>
+      <p>
+        Travis CI helped us <b>automate</b> our <b>build</b> and <b>deployment</b> process so we could stress
+        less about the logistics of getting our application up and running and more on
+        actually making the application. <br><br *isMobile>
+        Thanks for all the help, <i>Travis</i>!
+      </p>
+    </li>
+    <li>
+      <a href="http://www.tweepy.org/" target="_blank"><span>Tweepy</span></a>
+      <p>
+        We used Tweepy to collect all of the <b>Tweets</b> and <b>replies</b> from Twitter.
+      </p>
+    </li>
+  </ul>
+</div>
+
