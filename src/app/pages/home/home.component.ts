@@ -9,7 +9,8 @@ import { AngularFirestore } from 'angularfire2/firestore';
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit {
-  tweets: Observable<Tweet[]>;
+  public tweets: Observable<Tweet[]>;
+  public isLoading = true;
 
   constructor(db: AngularFirestore) {
     this.tweets = db.collection('tweets', ref => ref
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
       .limit(10)
       .orderBy('id', 'desc')
     ).valueChanges();
+    this.tweets.subscribe(() => this.isLoading = false);
   }
 
   ngOnInit() {
