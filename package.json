@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -26,6 +26,7 @@
     "@angular/router": "^5.0.2",
     "@swimlane/ngx-charts": "^7.0.1",
     "angularfire2": "^5.0.0-rc.4",
+    "angulartics2": "^4.2.0",
     "core-js": "^2.4.1",
     "firebase": "^4.6.2",
     "font-awesome": "^4.7.0",
