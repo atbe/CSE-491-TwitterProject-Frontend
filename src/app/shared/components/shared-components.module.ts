@@ -8,17 +8,21 @@ import {
 } from '@angular/material';
 import { TweetStatisticsComponent } from './tweet-statistics/tweet-statistics.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { TopHashtagsComponent } from './top-hashtags/top-hashtags.component';
+import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     TweetComponent,
     ToolbarComponent,
-    TweetStatisticsComponent
+    TweetStatisticsComponent,
+    TopHashtagsComponent
   ],
   exports: [
     TweetComponent,
     ToolbarComponent,
-    TweetStatisticsComponent
+    TweetStatisticsComponent,
+    TopHashtagsComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +32,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MatMenuModule,
     MatCardModule,
     NgxChartsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    NgbModule,
+    NgbCollapseModule
   ],
   providers: [],
 })
