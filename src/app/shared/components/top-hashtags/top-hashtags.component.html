@@ -1,0 +1,6 @@
+<h1>Top 10 Hashtags</h1>
+<ul class="chart">
+  <li *ngFor="let hashtag of hashtags | async">
+      {{hashtag.count}} replies with this hashtag <strong>#{{hashtag.text}}</strong>
+  </li>
+</ul>

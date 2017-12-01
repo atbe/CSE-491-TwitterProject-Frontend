@@ -8,17 +8,20 @@ import {
 } from '@angular/material';
 import { TweetStatisticsComponent } from './tweet-statistics/tweet-statistics.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { TopHashtagsComponent } from './top-hashtags/top-hashtags.component';
 
 @NgModule({
   declarations: [
     TweetComponent,
     ToolbarComponent,
-    TweetStatisticsComponent
+    TweetStatisticsComponent,
+    TopHashtagsComponent
   ],
   exports: [
     TweetComponent,
     ToolbarComponent,
-    TweetStatisticsComponent
+    TweetStatisticsComponent,
+    TopHashtagsComponent
   ],
   imports: [
     CommonModule,
