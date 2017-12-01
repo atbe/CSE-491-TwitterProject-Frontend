@@ -1,0 +1,52 @@
+@color_1: #bababa;
+@color_2: #121212;
+@color_3: tomato;
+@font_family_1: 'Noto Sans', sans-serif;
+
+@import "https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic";
+html {
+  font-family: @font_family_1;
+  font-size: 17px;
+  line-height: 1.5;
+}
+ul.chart {
+  counter-reset: counter;
+  >li {
+    color: @color_1;
+    display: block;
+    font-size: 11px;
+    line-height: 25px;
+    margin: 12px 0 8px;
+    padding: 0 0 0 50px;
+    position: relative;
+    text-transform: uppercase;
+    >strong {
+      color: @color_2;
+      display: block;
+      font-size: 3em;
+      font-weight: 400;
+      padding: 3px 0 18px;
+      text-transform: none;
+    }
+    &:before {
+      color: @color_1;
+      content: counter(counter);
+      counter-increment: counter;
+      font: bold 32px/1 'Noto Sans', sans-serif;
+      left: 0;
+      margin: -16px 0 0;
+      position: absolute;
+      top: 50%;
+      transition: all 400ms ease;
+    }
+    &:hover {
+      &:before {
+        color: @color_3;
+      }
+    }
+  }
+}
+
+.center {
+  text-align: center;
+}
