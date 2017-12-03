@@ -14,6 +14,7 @@ import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { PagesModule } from './pages/pages.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AgWordCloudModule } from 'angular4-word-cloud';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
     SharedComponentsModule,
     PagesModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AgWordCloudModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

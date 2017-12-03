@@ -3,36 +3,37 @@
     <mat-icon>arrow_back</mat-icon>
   </button>
 </div>
-<div *ngIf="tweet" class="app-tweet">
+<div *ngIf="!loading" class="app-tweet">
   <app-tweet
     [tweet]="tweet"
     [analyzeButton]="false">
   </app-tweet>
 </div>
 
-<div>
-  <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile>
-      <ngx-charts-pie-chart
-        [view]="pieChartView"
-        [scheme]="pieChartColorScheme"
-        [results]="sentimentValues"
-        [labels]="true"
-        [animations]="true">
-      </ngx-charts-pie-chart>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <ngx-charts-gauge
-        [view]="pieChartView"
-        [scheme]="pieChartColorScheme"
-        [results]="sentimentValues">
-      </ngx-charts-gauge>
-    </mat-grid-tile>
-  </mat-grid-list>
+<div class="d-flex flex-column align-items-center">
+  <div class="p-2">
+    <canvas baseChart
+            *ngIf="!loadingSentiment"
+            [data]="sentimentData"
+            [labels]="sentimentLabels"
+            chartType="doughnut">
+    </canvas>
+  </div>
+  <div class="p-2">
+  </div>
+  <div class="p-2">
+    <app-word-cloud *ngIf="!loading"
+                    [tweetId]="tweetId">
+    </app-word-cloud>
+  </div>
+</div>
 
+<div>
   <mat-grid-list cols="1" rowHeight="1:1">
     <mat-grid-tile>
-      <app-top-hashtags [hashtags]="hashtags">
+      <app-top-hashtags
+        *ngIf="!loading"
+        [tweetId]="tweetId">
       </app-top-hashtags>
     </mat-grid-tile>
   </mat-grid-list>

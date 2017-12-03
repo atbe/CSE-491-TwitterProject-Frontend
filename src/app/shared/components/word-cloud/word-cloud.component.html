@@ -1,0 +1,11 @@
+<div *ngIf="loading">
+  Loading Word Map...
+  <mat-spinner>
+  </mat-spinner>
+</div>
+<div AgWordCloud *ngIf="!loading"
+     #word_cloud_chart=ag-word-cloud
+     [wordData]="wordData"
+     [options]="options">
+</div>
+
