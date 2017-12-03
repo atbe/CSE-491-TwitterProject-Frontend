@@ -3,7 +3,7 @@ import { SharedComponentsModule } from '../shared/components/shared-components.m
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CommonModule } from '@angular/common';
-import { NgbTabsetModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbTabsetModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatProgressSpinnerModule } from '@angular/material';
 import { ResponsiveModule } from 'ng2-responsive';
 
@@ -22,7 +22,8 @@ import { ResponsiveModule } from 'ng2-responsive';
     NgbTabsetModule,
     MatProgressSpinnerModule,
     NgbTooltipModule,
-    ResponsiveModule
+    ResponsiveModule,
+    NgbCollapseModule
   ],
   providers: [],
 })
