@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
@@ -21,8 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent
   ],
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
+    BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(CONFIG),
     AngularFirestoreModule,
