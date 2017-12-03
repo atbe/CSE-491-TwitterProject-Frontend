@@ -19,5 +19,8 @@
       <span><i class="fa fa-heart"></i>  {{ tweet.favorite_count }}</span>
     </div>
   </mat-card-content>
+  <mat-card-actions *ngIf="analyzeButton">
+    <button mat-button (click)="goToTweetAnalysis()">Analyze</button>
+  </mat-card-actions>
 </mat-card>
 

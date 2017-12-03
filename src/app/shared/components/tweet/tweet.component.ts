@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Tweet } from '../../../models/tweet';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tweet',
@@ -9,10 +9,15 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 export class TweetComponent implements OnInit {
   @Input() tweet: Tweet;
+  @Input() analyzeButton = true;
 
-  constructor(public db: AngularFirestore) {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
+  }
+
+  goToTweetAnalysis() {
+    this.router.navigate(['/tweet', this.tweet.id_str]);
   }
 }
