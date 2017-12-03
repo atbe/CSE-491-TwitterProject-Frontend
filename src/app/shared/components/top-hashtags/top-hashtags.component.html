@@ -2,19 +2,11 @@
 Credit: https://codepen.io/lawnch/pen/Hxtda?limit=all&page=1&q=top+10
 -->
 
-<p class="center">
-  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
-          [attr.aria-expanded]="!isCollapsed" aria-controls="topHashtags">
-    <i class="fa fa-plus"></i> Top 10 Hashtags
-  </button>
-</p>
-<div id="topHashtags" [ngbCollapse]="isCollapsed">
-  <ul class="chart">
-    <li *ngFor="let hashtag of hashtags | async">
-      {{hashtag.count}} replies with this hashtag
-      <strong>
-        <a href="https://twitter.com/hashtag/{{hashtag.text}}" target="_blank">#{{hashtag.text}}</a>
-      </strong>
-    </li>
-  </ul>
-</div>
+<ul class="chart">
+  <li *ngFor="let hashtag of hashtags | async">
+    {{hashtag.count}} replies with this hashtag
+    <strong>
+      <a href="https://twitter.com/hashtag/{{hashtag.text}}" target="_blank">#{{hashtag.text}}</a>
+    </strong>
+  </li>
+</ul>
