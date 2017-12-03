@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { TweetSentiment } from '../../../models/tweet-sentiment';
+import { ActivatedRoute } from '@angular/router';
+import { Tweet } from '../../../models/tweet';
 
 @Component({
   selector: 'app-tweet-statistics',
@@ -10,6 +12,7 @@ import { TweetSentiment } from '../../../models/tweet-sentiment';
 })
 export class TweetStatisticsComponent implements OnInit {
   @Input() tweetId: string;
+  tweet: Tweet;
   sentiment: Observable<TweetSentiment>;
   sentimentValues = [
     {'name': 'Positive', 'value': 0},
@@ -24,10 +27,22 @@ export class TweetStatisticsComponent implements OnInit {
 
   hashtags: Observable<any>;
 
-  constructor(private db: AngularFirestore) {
+  constructor(private db: AngularFirestore, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.route.params.subscribe(async (params) => {
+      this.tweetId = params['id'];
+      this.tweet = await this.getTweet();
+      this.setupStatistics();
+    });
+  }
+
+  private async getTweet(): Promise<Tweet> {
+    return this.db.doc(`tweets/${this.tweetId}`).valueChanges().first().toPromise();
+  }
+
+  private setupStatistics(): void {
     this.sentiment = this.db.doc(`sentiment/${this.tweetId}`).valueChanges();
     this.hashtags = this.db.collection(`hashtags/${this.tweetId}/${this.tweetId}`, (ref => ref.
       orderBy('count', 'desc')

@@ -1,24 +1,39 @@
+<div class="back">
+  <button mat-button routerLink="/home">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</div>
+<div *ngIf="tweet" class="app-tweet">
+  <app-tweet
+    [tweet]="tweet"
+    [analyzeButton]="false">
+  </app-tweet>
+</div>
+
 <div>
-    <mat-grid-list cols="3" rowHeight="3:1">
-      <mat-grid-tile>
-        <ngx-charts-pie-chart
-          [view]="pieChartView"
-          [scheme]="pieChartColorScheme"
-          [results]="sentimentValues"
-          [labels]="true"
-          [animations]="true">
-        </ngx-charts-pie-chart>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <ngx-charts-gauge
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <ngx-charts-pie-chart
+        [view]="pieChartView"
+        [scheme]="pieChartColorScheme"
+        [results]="sentimentValues"
+        [labels]="true"
+        [animations]="true">
+      </ngx-charts-pie-chart>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <ngx-charts-gauge
         [view]="pieChartView"
         [scheme]="pieChartColorScheme"
         [results]="sentimentValues">
-        </ngx-charts-gauge>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <app-top-hashtags [hashtags]="hashtags">
-        </app-top-hashtags>
-      </mat-grid-tile>
-    </mat-grid-list>
+      </ngx-charts-gauge>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list cols="1" rowHeight="1:1">
+    <mat-grid-tile>
+      <app-top-hashtags [hashtags]="hashtags">
+      </app-top-hashtags>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
