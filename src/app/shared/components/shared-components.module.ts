@@ -3,7 +3,7 @@ import { TweetComponent } from './tweet/tweet.component';
 import { CommonModule } from '@angular/common';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import {
-  MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatListModule, MatMenuModule,
+  MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatMenuModule,
   MatToolbarModule
 } from '@angular/material';
 import { TweetStatisticsComponent } from './tweet-statistics/tweet-statistics.component';
