@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { Observable } from 'rxjs/Observable';
-import { TweetSentiment } from '../../../models/tweet-sentiment';
 import { ActivatedRoute } from '@angular/router';
 import { Tweet } from '../../../models/tweet';
 
