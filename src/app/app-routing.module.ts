@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
-import { TweetStatisticsComponent } from './shared/components/tweet-statistics/tweet-statistics.component';
+import { TweetStatisticsComponent } from './pages/tweet-statistics/tweet-statistics.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, data: { state: 'home' } },

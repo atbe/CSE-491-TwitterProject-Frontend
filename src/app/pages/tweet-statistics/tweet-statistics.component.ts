@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { ActivatedRoute } from '@angular/router';
-import { Tweet } from '../../../models/tweet';
+import { Tweet } from '../../models/tweet';
 
 @Component({
   selector: 'app-tweet-statistics',

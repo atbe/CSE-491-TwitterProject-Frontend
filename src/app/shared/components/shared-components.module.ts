@@ -6,7 +6,7 @@ import {
   MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatMenuModule, MatProgressSpinnerModule,
   MatToolbarModule
 } from '@angular/material';
-import { TweetStatisticsComponent } from './tweet-statistics/tweet-statistics.component';
+import { TweetStatisticsComponent } from '../../pages/tweet-statistics/tweet-statistics.component';
 import { RouterModule } from '@angular/router';
 import { TopHashtagsComponent } from './top-hashtags/top-hashtags.component';
 import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
