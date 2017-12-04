@@ -12,10 +12,10 @@
     <p class="tweet--body">{{ tweet.text }}</p>
 
     <hr>
-    <div class="tweet--time">{{ tweet.timestamp_ms | date:'E LLL d, y - h:m aaa' }}</div>
+    <div class="tweet--time">{{ tweet.timestamp_ms | date:'E LLL d, y - h:mm aaa' }}</div>
   </mat-card-content>
   <mat-card-actions *ngIf="analyzeButton">
-    <button mat-button (click)="goToTweetAnalysis()">Analyze</button>
+    <button mat-button (click)="goToTweetAnalysis()">Click to Analyze {{replyCount | number}} Replies</button>
   </mat-card-actions>
 </mat-card>
 
