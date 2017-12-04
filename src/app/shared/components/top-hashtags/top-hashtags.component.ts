@@ -10,6 +10,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 export class TopHashtagsComponent implements OnInit {
   @Input() tweetId: string;
   hashtags: Observable<any>;
+  loading = true;
 
   constructor(private db: AngularFirestore) {}
 
@@ -18,6 +19,11 @@ export class TopHashtagsComponent implements OnInit {
       orderBy('count', 'desc')
         .limit(10)
     )).valueChanges();
+
+    this.hashtags.subscribe((hashtags) => {
+      this.hashtags = hashtags;
+      this.loading = false;
+    });
   }
 
 }

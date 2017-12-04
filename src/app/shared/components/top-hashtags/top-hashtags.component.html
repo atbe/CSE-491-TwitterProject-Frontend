@@ -2,11 +2,18 @@
 Credit: https://codepen.io/lawnch/pen/Hxtda?limit=all&page=1&q=top+10
 -->
 
-<ul class="chart">
-  <li *ngFor="let hashtag of hashtags | async">
-    {{hashtag.count}} replies with this hashtag
-    <strong>
-      <a href="https://twitter.com/hashtag/{{hashtag.text}}" target="_blank">#{{hashtag.text}}</a>
-    </strong>
-  </li>
-</ul>
+<div *ngIf="loading">
+  Loading Hashtags...
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!loading">
+  <h3 align="center">Top 10 Hashtags</h3>
+  <ul class="chart">
+    <li *ngFor="let hashtag of hashtags">
+      {{hashtag.count}} replies with this hashtag
+      <strong>
+        <a href="https://twitter.com/hashtag/{{hashtag.text}}" target="_blank">#{{hashtag.text}}</a>
+      </strong>
+    </li>
+  </ul>
+</div>
