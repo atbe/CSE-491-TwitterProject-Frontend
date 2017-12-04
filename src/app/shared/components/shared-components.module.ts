@@ -13,7 +13,8 @@ import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ResponsiveModule } from 'ng2-responsive';
 import { AgWordCloudModule } from 'angular4-word-cloud';
 import { WordCloudComponent } from './word-cloud/word-cloud.component';
-import { ChartsModule } from 'ng2-charts';
+import { ChartModule } from 'angular2-chartjs';
+import { SentimentSummaryComponent } from "./sentiment-summary/sentiment-summary.component";
 
 @NgModule({
   declarations: [
@@ -21,14 +22,16 @@ import { ChartsModule } from 'ng2-charts';
     ToolbarComponent,
     TweetStatisticsComponent,
     TopHashtagsComponent,
-    WordCloudComponent
+    WordCloudComponent,
+    SentimentSummaryComponent
   ],
   exports: [
     TweetComponent,
     ToolbarComponent,
     TweetStatisticsComponent,
     TopHashtagsComponent,
-    WordCloudComponent
+    WordCloudComponent,
+    SentimentSummaryComponent
   ],
   imports: [
     RouterModule,
@@ -44,7 +47,7 @@ import { ChartsModule } from 'ng2-charts';
     ResponsiveModule,
     AgWordCloudModule,
     MatProgressSpinnerModule,
-    ChartsModule
+    ChartModule
   ],
   providers: [],
 })

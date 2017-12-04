@@ -10,31 +10,23 @@
   </app-tweet>
 </div>
 
-<div class="d-flex flex-column align-items-center">
+<div class="d-flex flex-column align-items-center" *ngIf="!loading">
   <div class="p-2">
-    <canvas baseChart
-            *ngIf="!loadingSentiment"
-            [data]="sentimentData"
-            [labels]="sentimentLabels"
-            chartType="doughnut">
-    </canvas>
+    <app-sentiment-summary
+      [tweetId]="tweetId">
+    </app-sentiment-summary>
+    <hr>
   </div>
   <div class="p-2">
-  </div>
-  <div class="p-2">
-    <app-word-cloud *ngIf="!loading"
-                    [tweetId]="tweetId">
+    <app-word-cloud
+      [tweetId]="tweetId">
     </app-word-cloud>
+    <hr>
+  </div>
+  <div class="p-2">
+    <app-top-hashtags
+      [tweetId]="tweetId">
+    </app-top-hashtags>
   </div>
 </div>
 
-<div>
-  <mat-grid-list cols="1" rowHeight="1:1">
-    <mat-grid-tile>
-      <app-top-hashtags
-        *ngIf="!loading"
-        [tweetId]="tweetId">
-      </app-top-hashtags>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div>
