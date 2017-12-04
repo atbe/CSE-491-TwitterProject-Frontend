@@ -3,9 +3,12 @@
   <mat-spinner>
   </mat-spinner>
 </div>
-<div AgWordCloud *ngIf="!loading"
-     #word_cloud_chart=ag-word-cloud
-     [wordData]="wordData"
-     [options]="options">
+<div>
+  <h3 align="center">Reply Word Cloud</h3>
+  <div AgWordCloud *ngIf="!loading"
+       class="word-cloud"
+       #word_cloud_chart=ag-word-cloud
+       [wordData]="wordData"
+       [options]="options">
+  </div>
 </div>
-

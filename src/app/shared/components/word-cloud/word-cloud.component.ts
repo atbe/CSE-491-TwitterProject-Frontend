@@ -29,7 +29,7 @@ export class WordCloudComponent implements OnInit {
   ngOnInit() {
     this.db.collection(`words/${this.tweetId}/${this.tweetId}`, (ref => ref.
       orderBy('count', 'desc')
-        .limit(40)
+        .limit(50)
     )).valueChanges().subscribe((words) => {
       this.wordData = words.map((word: any) => {
         return { text: word.text, size: word.count };
