@@ -10,20 +10,22 @@
   </app-tweet>
 </div>
 
-<div class="d-flex flex-column align-items-center" *ngIf="!loading">
-  <div class="p-2">
+<div class="d-flex flex-grow flex-column" *ngIf="!loading">
+  <div class="p-2 align-self-center">
     <app-sentiment-summary
       [tweetId]="tweetId">
     </app-sentiment-summary>
     <hr>
   </div>
-  <div class="p-2">
+  <div class="p-2 align-self-center">
+    <h3 align="center">Reply Word Cloud</h3>
     <app-word-cloud
       [tweetId]="tweetId">
     </app-word-cloud>
     <hr>
   </div>
-  <div class="p-2">
+  <div class="p-2 align-self-center">
+    <h3 align="center">Top 10 Hashtags</h3>
     <app-top-hashtags
       [tweetId]="tweetId">
     </app-top-hashtags>

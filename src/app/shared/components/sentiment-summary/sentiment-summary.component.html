@@ -3,8 +3,7 @@
   <mat-spinner></mat-spinner>
 </div>
 
-<h4 align="center"><b>{{(sentiment | async)?.count | number }}</b> Replies Analyzed</h4>
-
+<h3 align="center"><b>{{(sentiment | async)?.count | number }}</b> Replies Analyzed</h3>
 <chart
   *ngIf="!loading"
   [data]="data"
