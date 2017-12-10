@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CommonModule } from '@angular/common';
 import { NgbCollapseModule, NgbTabsetModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
-import { MatProgressSpinnerModule } from '@angular/material';
+import { MatPaginatorModule, MatProgressSpinnerModule } from '@angular/material';
 import { ResponsiveModule } from 'ng2-responsive';
 
 @NgModule({
@@ -23,7 +23,8 @@ import { ResponsiveModule } from 'ng2-responsive';
     MatProgressSpinnerModule,
     NgbTooltipModule,
     ResponsiveModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    MatPaginatorModule
   ],
   providers: [],
 })
