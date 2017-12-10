@@ -4,12 +4,7 @@
 </div>
 
 <div *ngFor="let tweet of tweets | async" class="app-tweet">
-  <app-tweet
+  <app-tweet routerLink="/"
     [tweet]="tweet">
   </app-tweet>
-
-  <app-tweet-statistics
-    [tweetId]="tweet.id_str"
-    class="tweet-statistics">
-  </app-tweet-statistics>
 </div>

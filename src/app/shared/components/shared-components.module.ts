@@ -3,28 +3,35 @@ import { TweetComponent } from './tweet/tweet.component';
 import { CommonModule } from '@angular/common';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import {
-  MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatListModule, MatMenuModule,
+  MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatMenuModule, MatProgressSpinnerModule,
   MatToolbarModule
 } from '@angular/material';
-import { TweetStatisticsComponent } from './tweet-statistics/tweet-statistics.component';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { TweetStatisticsComponent } from '../../pages/tweet-statistics/tweet-statistics.component';
 import { RouterModule } from '@angular/router';
 import { TopHashtagsComponent } from './top-hashtags/top-hashtags.component';
 import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ResponsiveModule } from 'ng2-responsive';
+import { AgWordCloudModule } from 'angular4-word-cloud';
+import { WordCloudComponent } from './word-cloud/word-cloud.component';
+import { ChartModule } from 'angular2-chartjs';
+import { SentimentSummaryComponent } from "./sentiment-summary/sentiment-summary.component";
 
 @NgModule({
   declarations: [
     TweetComponent,
     ToolbarComponent,
     TweetStatisticsComponent,
-    TopHashtagsComponent
+    TopHashtagsComponent,
+    WordCloudComponent,
+    SentimentSummaryComponent
   ],
   exports: [
     TweetComponent,
     ToolbarComponent,
     TweetStatisticsComponent,
-    TopHashtagsComponent
+    TopHashtagsComponent,
+    WordCloudComponent,
+    SentimentSummaryComponent
   ],
   imports: [
     RouterModule,
@@ -34,11 +41,13 @@ import { ResponsiveModule } from 'ng2-responsive';
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
-    NgxChartsModule,
     MatExpansionModule,
     NgbModule,
     NgbCollapseModule,
-    ResponsiveModule
+    ResponsiveModule,
+    AgWordCloudModule,
+    MatProgressSpinnerModule,
+    ChartModule
   ],
   providers: [],
 })

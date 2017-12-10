@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-top-hashtags',
@@ -7,12 +8,22 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./top-hashtags.component.less']
 })
 export class TopHashtagsComponent implements OnInit {
-  @Input() hashtags: Observable<any>;
-  public isCollapsed = true;
+  @Input() tweetId: string;
+  hashtags: Observable<any>;
+  loading = true;
 
-  constructor() { }
+  constructor(private db: AngularFirestore) {}
 
   ngOnInit() {
+    this.hashtags = this.db.collection(`hashtags/${this.tweetId}/${this.tweetId}`, (ref => ref.
+      orderBy('count', 'desc')
+        .limit(10)
+    )).valueChanges();
+
+    this.hashtags.subscribe((hashtags) => {
+      this.hashtags = hashtags;
+      this.loading = false;
+    });
   }
 
 }

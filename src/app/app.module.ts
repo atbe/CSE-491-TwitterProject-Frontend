@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
@@ -15,21 +14,23 @@ import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { PagesModule } from './pages/pages.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AgWordCloudModule } from 'angular4-word-cloud';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
+    BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(CONFIG),
     AngularFirestoreModule,
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
     SharedComponentsModule,
     PagesModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AgWordCloudModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

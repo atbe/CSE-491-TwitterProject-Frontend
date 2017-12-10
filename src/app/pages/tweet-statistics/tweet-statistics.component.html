@@ -1,0 +1,34 @@
+<div class="back">
+  <button mat-button routerLink="/home">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</div>
+<div *ngIf="!loading" class="app-tweet">
+  <app-tweet
+    [tweet]="tweet"
+    [analyzeButton]="false">
+  </app-tweet>
+</div>
+
+<div class="d-flex flex-grow flex-column" *ngIf="!loading">
+  <div class="p-2 align-self-center">
+    <app-sentiment-summary
+      [tweetId]="tweetId">
+    </app-sentiment-summary>
+    <hr>
+  </div>
+  <div class="p-2 align-self-center">
+    <h3 align="center">Reply Word Cloud</h3>
+    <app-word-cloud
+      [tweetId]="tweetId">
+    </app-word-cloud>
+    <hr>
+  </div>
+  <div class="p-2 align-self-center">
+    <h3 align="center">Top 10 Hashtags</h3>
+    <app-top-hashtags
+      [tweetId]="tweetId">
+    </app-top-hashtags>
+  </div>
+</div>
+
