@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.db.collection('tweets', ref => ref
       .where('is_quote_status', '==', false)
-    ).snapshotChanges().first().toPromise().then(
+    ).snapshotChanges().subscribe(
       (c) => {
         this.length = c.length;
         this.loadTweets();
@@ -41,10 +41,8 @@ export class HomeComponent implements OnInit {
   }
 
   public pageChange(event: PageEvent) {
-    console.log(event);
     this.loading = true;
     if (event.pageIndex > this.oldIndex) {
-      console.log('Next page');
       this.tweets = this.db.collection('tweets', ref => ref
         .where('is_quote_status', '==', false)
         .limit(this.pageSize)
@@ -52,7 +50,6 @@ export class HomeComponent implements OnInit {
         .startAfter(this.lastId)
       ).valueChanges();
     } else {
-      console.log('Previous page');
       this.tweets = this.db.collection('tweets', ref => ref
         .where('is_quote_status', '==', false)
         .limit(this.pageSize)
