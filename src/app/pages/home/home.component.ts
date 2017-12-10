@@ -22,7 +22,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.db.collection('/tweets').snapshotChanges().first().toPromise().then(
+    this.db.collection('tweets', ref => ref
+      .where('is_quote_status', '==', false)
+    ).snapshotChanges().first().toPromise().then(
       (c) => {
         this.length = c.length;
         this.loadTweets();
