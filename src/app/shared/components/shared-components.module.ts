@@ -15,6 +15,7 @@ import { AgWordCloudModule } from 'angular4-word-cloud';
 import { WordCloudComponent } from './word-cloud/word-cloud.component';
 import { ChartModule } from 'angular2-chartjs';
 import { SentimentSummaryComponent } from "./sentiment-summary/sentiment-summary.component";
+import { RepliesOverTimeGraphComponent } from './replies-over-time-graph/replies-over-time-graph.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SentimentSummaryComponent } from "./sentiment-summary/sentiment-summary
     TweetStatisticsComponent,
     TopHashtagsComponent,
     WordCloudComponent,
-    SentimentSummaryComponent
+    SentimentSummaryComponent,
+    RepliesOverTimeGraphComponent
   ],
   exports: [
     TweetComponent,
@@ -31,7 +33,8 @@ import { SentimentSummaryComponent } from "./sentiment-summary/sentiment-summary
     TweetStatisticsComponent,
     TopHashtagsComponent,
     WordCloudComponent,
-    SentimentSummaryComponent
+    SentimentSummaryComponent,
+    RepliesOverTimeGraphComponent
   ],
   imports: [
     RouterModule,
