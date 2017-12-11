@@ -15,6 +15,8 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { PagesModule } from './pages/pages.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AgWordCloudModule } from 'angular4-word-cloud';
+import { RouteReuseStrategy } from '@angular/router';
+import { CustomRouteReuseStrategy } from './app-routing-strategy';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,10 @@ import { AgWordCloudModule } from 'angular4-word-cloud';
     NgbModule.forRoot(),
     AgWordCloudModule.forRoot()
   ],
-  providers: [],
+  providers: [{
+    provide: RouteReuseStrategy,
+    useClass: CustomRouteReuseStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

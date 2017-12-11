@@ -5,7 +5,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { TweetStatisticsComponent } from './pages/tweet-statistics/tweet-statistics.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, data: { state: 'home' } },
+  { path: 'home', component: HomeComponent, data: { state: 'home', reuse: true } },
   { path: 'about', component: AboutComponent, data: { state: 'about' } },
   { path: 'tweet/:id', component: TweetStatisticsComponent, data: { state: 'tweet' } },
   {
