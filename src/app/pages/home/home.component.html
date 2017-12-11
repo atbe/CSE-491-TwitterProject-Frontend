@@ -1,10 +1,19 @@
-<div class="loading-progress" *ngIf="isLoading">
+<div class="loading-progress" *ngIf="loading">
   <h1>Loading...</h1>
   <mat-spinner></mat-spinner>
 </div>
 
-<div *ngFor="let tweet of tweets | async" class="app-tweet">
-  <app-tweet routerLink="/"
-    [tweet]="tweet">
-  </app-tweet>
+<div *ngIf="!loading">
+  <div *ngFor="let tweet of tweets | async" class="app-tweet">
+    <app-tweet routerLink="/"
+               [tweet]="tweet">
+    </app-tweet>
+  </div>
 </div>
+
+
+<mat-paginator [hidden]="loading"
+               [length]="length"
+               [pageSize]="pageSize"
+               (page)="pageChange($event)">
+</mat-paginator>

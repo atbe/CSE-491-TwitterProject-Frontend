@@ -19,7 +19,12 @@ export class TweetComponent implements OnInit {
   ngOnInit() {
     this.db.doc(`sentiment/${this.tweet.id_str}`)
       .valueChanges()
-      .subscribe((sentiment: TweetSentiment) => this.replyCount = sentiment.count);
+      .subscribe(
+        (sentiment: TweetSentiment) => {
+          if (sentiment) {
+            this.replyCount = sentiment.count;
+          }
+        });
   }
 
   goToTweetAnalysis() {
